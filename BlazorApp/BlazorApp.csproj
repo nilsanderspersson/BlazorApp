@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Hangfire" Version="1.7.27" />
+    <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" Version="5.0.0" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
+    <PackageReference Include="Tiny.RestClient" Version="1.7.1" />
+  </ItemGroup>
+
 </Project>

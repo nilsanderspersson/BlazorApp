@@ -1,0 +1,22 @@
+﻿@page "/project"
+
+<h5>Projekt från Jeeves</h5>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Projkt</th>
+            <th scope="col">Beskrivning</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Cache.GetProjects())
+        { 
+        <tr>
+            <th>@item.Project</th>
+            <td>@item.Description</td>
+        </tr>
+        }
+    </tbody>
+</table>
