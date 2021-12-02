@@ -53,8 +53,9 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 // HANGFIRE JOBS
-RecurringJob.AddOrUpdate<MoveFilesScheduler>("Move Files", x => x.Execute(), "* * * * *");
-RecurringJob.AddOrUpdate<JeevesScheduler>("Get Jeeves Projects", x => x.LoadProjects(), "* * * * *");
+RecurringJob.AddOrUpdate<MoveFilesScheduler>("Move Files", x => x.Execute(), "*/10 * * * *");
+RecurringJob.AddOrUpdate<JeevesScheduler>("Get Jeeves Projects", x => x.LoadProjects(), "*/10 * * * *");
+RecurringJob.AddOrUpdate<RestScheduler>("Get Todos from Rest API", x => x.GetTodos(), "*/10 * * * *");
 
 app.Run();
 
